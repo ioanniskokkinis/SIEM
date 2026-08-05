@@ -77,3 +77,5 @@ The lab is hosted on a Hetzner VPS and designed with a modular architecture:
 ## References
 
 ## License
+
+This project is licensed under the MIT License.
