@@ -36,6 +36,7 @@ The lab is hosted on a Hetzner VPS and designed with a modular architecture:
 * Docker & Docker Compose
 * Ubuntu Server
 * Nginx
+* The Hive
 * Bash scripting
 * Webhooks (alerting & automation)
 * Virtualization tools (VirtualBox / VMware)
@@ -43,12 +44,16 @@ The lab is hosted on a Hetzner VPS and designed with a modular architecture:
 ---
 
 ## Environment Setup
+I followed the wazuh instructions and i did perfectely.
+
 
 ## Network Design & Segmentation
 
 ## SIEM Configuration (Wazuh)
 
 ## Log Collection & Aggregation
+
+We had an issue on that.Log were not showing up so i change the prefix
 
 ## Threat Simulation Scenarios
 
