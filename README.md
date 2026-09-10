@@ -77,6 +77,10 @@ We had an issue on that.Log were not showing up so i change the prefix
 
 ## Results & Key Findings
 
+## Problems that i had
+- Very complex project
+- Not showing up everything it needs to be
+
 ## Future Improvements
 
 ## References
