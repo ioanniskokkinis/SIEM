@@ -50,6 +50,13 @@ I followed the wazuh instructions and i did perfectely.
 ## Network Design & Segmentation
 
 ## SIEM Configuration (Wazuh)
+- **Docker conflicts**: Found two Docker daemons running at once (snap and apt) holding the same ports. Removed the snap install and standardized on one.
+- **Port clashes**: Resolved conflicts on 443, 514/udp, 1514, 1515 and 55000, including remapping syslog to 5514 and clearing stale docker-proxy processes.
+- Manager crash loop: Traced the restart loop through container exit codes, docker events and Wazuh’s own logs. The root cause was Filebeat failing because bind-mounted certificate files didn’t exist, so Docker had created directories in their place.
+- **TLS certificates**: Regenerated the Wazuh certificates with the cert generator and fixed root-owned file permissions.
+- **Indexer security**: Fixed a YAML syntax error in internal_users.yml. Learned that sed -i breaks single-file bind mounts because it replaces the inode, and that a container restart is needed to pick up the change. Initialized the OpenSearch security index manually with securityadmin.sh.
+- **Admin credentials**: Rotated the indexer admin password by generating a bcrypt hash and updating the compose environment.
+- **VM networking**: Diagnosed a VirtualBox VM that wouldn’t start by reading VBox.log. A serial port had been pointed at a network device name, which caused a power-up failure.
 
 ## Log Collection & Aggregation
 
